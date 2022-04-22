@@ -85,7 +85,7 @@ app.get('/weather',(req,res)=>{
         if(error){
             return res.send({'error':error})
         }  
-        forecast(latitude , longitude, (error, {feelslike,temperature})=>{
+        forecast(latitude , longitude, (error, {feelslike,temperature,pressure})=>{
             if(error){
                 return res.send({'error':error})
             }
@@ -93,7 +93,8 @@ app.get('/weather',(req,res)=>{
                 title:'weather',
                 feelslike,
                 temperature,
-                location
+                location,
+                pressure
                     
             })
         })
@@ -118,5 +119,5 @@ app.get('*',(req,res)=>{
 })
 
 app.listen(port, ()=>{
-    console.log('server ise up on port 3000')
+    console.log('server ise up on port ' + port)
 })

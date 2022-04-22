@@ -10,6 +10,7 @@ const messagehtmlTag =  document.querySelector('p')  // doğrudan tag ismi html 
 const messageClass =  document.querySelector('.ClassNEma') // . ile başlar ise ilk class neme nesneyi getirir
 const messageOne =  document.querySelector('#message-1') //# ile başlar ise ID ye göre arar
 const messageTwo =  document.querySelector('#message-2')
+const messageTree =  document.querySelector('#message-3')
 
 
 
@@ -24,13 +25,12 @@ weatherForm.addEventListener('submit', (e)=>{
             if (data.error) {
                 messageOne.textContent  = data.error
                 messageTwo.textContent = ''
-                
+                messageTree.textContent = ''
             } else {
-
-    
+                console.log(data.pressure  + 'bar')
             messageOne.textContent =  data.location
             messageTwo.textContent = data.temperature
-               
+            messageTree.textContent = data.pressure  
             }
         })
     

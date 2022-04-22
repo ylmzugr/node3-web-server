@@ -19,9 +19,12 @@ const forecast = (latitude,longitude,callback)=>{
             callback('Coordinate error, pass string for error',undefined)
         }
         else {
+
             callback( undefined, {
                 temperature: body.current.temperature ,
-                feelslike: body.current.feelslike 
+                feelslike: body.current.feelslike,
+                pressure: body.current.pressure 
+                
             }) 
         }
 
